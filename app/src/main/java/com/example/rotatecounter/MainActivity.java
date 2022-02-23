@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(savedInstanceState != null){
             count=savedInstanceState.getInt(countKey);
+            count++;
         }
 
         setContentView(R.layout.activity_main);
@@ -37,16 +38,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        count++;
-    }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-       if(count>0)
-           count--;
-    }
 }
